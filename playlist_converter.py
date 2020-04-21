@@ -3,7 +3,7 @@ import subprocess, os
 import xml_parser
 
 client_id = '1e020bd65a934fa88aa8e49a05f75b60'
-client_secret = '545cc0fe9349415bac5ddbcd9d93440f'
+client_secret = ''
 
 
 def get_token(code):
@@ -86,7 +86,7 @@ def main():
     print("Make sure the Apple Music playlists are exported as .xml files and are in the wd.")
     input("Press any key to continue...")
     url = "https://accounts.spotify.com/authorize?client_id=1e020bd65a934fa88aa8e49a05f75b60&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2F&scope=user-read-private%20user-read-email%20playlist-modify-private%20playlist-modify-public"
-    print("Copy this URL into browser and hit enter. Your code will appear in the URL (code=_)\nURL:\n " + url)
+    print("Copy this URL into browser and hit enter. Your code will appear in the URL (code=_).\nCopy the code and paste it back in terminal.\nURL:\n " + url)
     code = input("Enter code: \n")
     access_token, refresh_token = get_token(code)
     user_id = input("Enter your spotify user ID: \n")
@@ -120,9 +120,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-#curl -H "Authorization: Basic MWUwMjBiZDY1YTkzNGZhODhhYThlNDlhMDVmNzViNjA6NTQ1Y2MwZmU5MzQ5NDE1YmFjNWRkYmNkOWQ5MzQ0MGY=" -d grant_type=authorization_code -d code=AQAASfYJAdN2-qHCGIFPJB9rxzMzhn2vEQrsLKqEs3xeNDQ3-J5JYHrkKxoyNI-W8SnVqrU82hS0Zjl7m8iidTSBwni34NsxHZsmPlKtWMlrpeuEPzQKDfcbaAc2RyGrAphK9WwfbHncPMkTU0_h4cwsGlXhjaPDLLwpWPx3shxBpLI9iKzXPkWEijSR3Xn7uv2R8vyHhFQLFPSdse0bpEAICFb3Vv0MKpVW059M7LRWwjVGXvtPIwSbY3gKoDtJhEgI5eN-InozD_qtw70QB1yF6dPfqEh0NIAVjukpsuH2oGa3HC0 -d redirect_uri=https%3A%2F%2Fapi-university.com%2F https://accounts.spotify.com/api/token
-#https://accounts.spotify.com/authorize?client_id=1e020bd65a934fa88aa8e49a05f75b60&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2F&scope=user-read-private%20user-read-email%20playlist-modify-private%20playlist-modify-public
-#curl -H 'Authorization: Basic MWUwMjBiZDY1YTkzNGZhODhhYThlNDlhMDVmNzViNjA6NTQ1Y2MwZmU5MzQ5NDE1YmFjNWRkYmNkOWQ5MzQ0MGY=' -d grant_type=refresh_token -d refresh_token=AQDIr0CgkYEN_AO3Han0eWvZ_x-JrEYXmP9cX30R7fbqrCXfUe4i6J79HrbOQPf3FGpj9gq2As6SMuJng7eWCscg6ky_KeGuJDoSOZLlT-SOODrVrs_HgftzYwWqxAgINsw https://accounts.spotify.com/api/token
-#curl -X GET "https://api.spotify.com/v1/search?q=the%20band&type=artist" -H "Authorization: Bearer BQCweXT3mqoLX6hJsoV5dd_ZBkl300oAh88tshApOqyIppU44wq7c6OSm6TndPuy_TKYNPvaWjyk4Nc_I9woJsOc1NI0c23d-M0SB094ddh8jKFb2u8xAJ-eEuO-wPIqEE1hzDl5XYRaoI2EKbr9l22YahJsV1fRRv2n3s3s6ePoD4Fq2liiGM_QeeovumC2nmIZGtfO6XMlDND1NHj8F3AOZjDS"

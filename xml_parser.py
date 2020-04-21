@@ -21,7 +21,7 @@ def get_songlist(tree):
             if name.text.find("(") != -1:
                 index = name.text.find("(")
                 song_name = name.text[:index-1]
-                song_name.replace("'","")
+                song_name = song_name.replace("'","")
                 key = [song_name, artist.text]
             else:
                 song_name = name.text.replace("'","")
